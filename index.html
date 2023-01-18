@@ -43,6 +43,7 @@
             <button class="sort" id="rra" onclick="reverse_rotate_a()">Reverse Rotate A</button>
             <button class="sort" id="rrb" onclick="reverse_rotate_b()">Reverse Rotate B</button>
             <button class="sort" id="rrr" onclick="reverse_rotate_ab()">Both</button>
+            
             <button id="open_settings" onclick="open_settings()">Paramètrage</button>
             
         </div>
@@ -54,7 +55,7 @@
 <script src="validate_settings.js"></script>
 <script>
     
-    function Enter(event)
+    function Enter(event) //valider quand on appuie sur Entrée
     {
         var key_pressed = event.which;
         if (key_pressed == 13) //le code de la touche Entrée
@@ -74,7 +75,7 @@
         document.getElementById("settings").style.display = 'none';
     }
     
-    function check1()
+    function check1() //verifie si la 1ere option est cochée
     {
         if (document.getElementById("c1").checked == true)
         {
@@ -86,7 +87,7 @@
         }
     }
     
-    function check2()
+    function check2() //verifie si la 2eme option est cochée
     {
         document.getElementsByTagName("span")[1].innerHTML = "";
         if (document.getElementById("c2").checked == true)
@@ -115,6 +116,46 @@
             document.getElementById("c2").checked = false;
             document.getElementsByTagName("span")[1].innerHTML = "";
         }
+    }
+    
+    function sort_check() //appelée à chaque manipulation de la pile A, vérifie si cette dernière est triée
+    {
+        const tab = [];
+        var i = 0, len = 0;
+        var list = document.getElementsByClassName("val_A");
+        while (list[len])
+        {
+            tab[len] = parseInt(list[len].innerHTML);
+            len++;
+        }
+        while (i < len)
+        {
+            if (tab[i] > tab[i + 1])
+                i = len;
+            i++;
+        }
+        
+        if (i == len && !document.getElementsByClassName("val_B")[0])
+        {
+            i = 0;
+            while (i < len)
+            {
+                list[i].style.backgroundColor = "green";
+                i++;
+            }
+            return (1);
+        }
+        else
+        {
+            i = 0;
+            while (i < len)
+            {
+                list[i].style.backgroundColor = "grey";
+                i++;
+            }
+            return (0);
+        }
+        
     }
 
 </script>

@@ -155,5 +155,6 @@ function validate()
         }
         document.getElementsByTagName("span")[2].innerHTML = "";
         document.getElementById("settings").style.display = 'none';
+        sort_check();
     }
 }

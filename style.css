@@ -124,24 +124,10 @@ input:not(#c1, #c2)
     font-size: 20px;
 }
 
-#sa {top: 15%; left: 55%;}
-
-#sb {top: 15%; left: 65%;}
-
-#ss {top: 15%; left: 75%;}
-
-#pa {top: 25%; left: 55%;}
-
-#pb{top: 25%; left: 65%;}
-
-#ra {top: 35%; left: 55%;}
-
-#rb{top: 35%; left: 65%;}
-
-#rr {top: 35%; left: 75%;}
-
-#rra{top: 45%; left: 55%;}
-
-#rrb {top: 45%; left: 65%;}
-
-#rrr {top: 45%; left: 75%;}
+#sa, #sb, #ss {top: 15%;}
+#pa, #pb {top: 25%;}
+#ra, #rb, #rr {top: 35%;}
+#rra, #rrb, #rrr {top: 45%;}
+#sa, #pa, #ra, #rra {left: 55%;}
+#sb, #pb, #rb, #rrb {left: 65%;}
+#ss, #rr, #rrr {left: 75%;}

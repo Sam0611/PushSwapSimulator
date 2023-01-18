@@ -79,8 +79,11 @@ function swap_a()
     var v2 = document.getElementsByClassName("val_A")[1].innerHTML;
     document.getElementsByClassName("val_A")[0].innerHTML = v2;
     document.getElementsByClassName("val_A")[1].innerHTML = v1;
-    blink(document.getElementsByClassName("val_A")[0]);
-    blink2(document.getElementsByClassName("val_A")[1]);
+    if (sort_check() == 0)
+    {
+        blink(document.getElementsByClassName("val_A")[0]);
+        blink2(document.getElementsByClassName("val_A")[1]);
+    }
 }
 
 function swap_b()
@@ -103,16 +106,17 @@ function push_a()
 {
     var v1 = document.getElementsByClassName("val_B")[0].innerHTML;
     document.getElementById("nb").innerHTML += "<li class='val_A'>" + v1 + "</li>";
-    reverse_rotate_a();
     document.getElementsByClassName("val_B")[0].remove();
+    reverse_rotate_a();
 }
 
 function push_b()
 {
     var v1 = document.getElementsByClassName("val_A")[0].innerHTML;
     document.getElementById("nb2").innerHTML += "<li class='val_B'>" + v1 + "</li>";
-    reverse_rotate_b();
     document.getElementsByClassName("val_A")[0].remove();
+    sort_check();
+    reverse_rotate_b();
 }
 
 function rotate_a()
@@ -124,7 +128,8 @@ function rotate_a()
     while (A_list[++len])
         A_list[len - 1].innerHTML = A_list[len].innerHTML;
     A_list[len - 1].innerHTML = tmp;
-    blink(A_list[len - 1]);
+    if (sort_check() == 0)
+        blink(A_list[len - 1]);
 }
 
 function rotate_b()
@@ -156,7 +161,8 @@ function reverse_rotate_a()
     while (--len > 0)
         A_list[len].innerHTML = A_list[len - 1].innerHTML;
     A_list[len].innerHTML = tmp;
-    blink(A_list[len]);
+    if (sort_check() == 0)
+        blink(A_list[len]);
 }
 
 function reverse_rotate_b()
