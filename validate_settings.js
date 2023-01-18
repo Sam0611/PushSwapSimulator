@@ -149,6 +149,7 @@ function validate()
     if (errors == 0)
     {
         i = 0;
+        nb_tries = 0;
         document.getElementById("nb").innerHTML = "<div class='pile'>Pile A</div>";
         document.getElementById("nb2").innerHTML = "<div class='pile'>Pile B</div>";
         while (i < nb_val)
@@ -158,7 +159,7 @@ function validate()
         }
         document.getElementsByTagName("span")[2].innerHTML = "";
         document.getElementById("settings").style.display = 'none';
-        document.getElementById("ct").innerHTML = 0;
+        document.getElementById("ct").innerHTML = nb_tries;
         sort_check();
     }
 }

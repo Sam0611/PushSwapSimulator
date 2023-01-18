@@ -73,8 +73,6 @@ function blink4(elem)
 /*  *   *   *   *   *   *   *   *   FONCTIONS DE TRI   *   *    *   *   *   *   */
 /*  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
 
-var nb_tries = 0;
-
 function swap_a()
 {
     var v1 = document.getElementsByClassName("val_A")[0].innerHTML;
