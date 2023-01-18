@@ -73,12 +73,15 @@ function blink4(elem)
 /*  *   *   *   *   *   *   *   *   FONCTIONS DE TRI   *   *    *   *   *   *   */
 /*  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
 
+var nb_tries = 0;
+
 function swap_a()
 {
     var v1 = document.getElementsByClassName("val_A")[0].innerHTML;
     var v2 = document.getElementsByClassName("val_A")[1].innerHTML;
     document.getElementsByClassName("val_A")[0].innerHTML = v2;
     document.getElementsByClassName("val_A")[1].innerHTML = v1;
+    document.getElementById("ct").innerHTML = ++nb_tries;
     if (sort_check() == 0)
     {
         blink(document.getElementsByClassName("val_A")[0]);
@@ -92,12 +95,14 @@ function swap_b()
     var v2 = document.getElementsByClassName("val_B")[1].innerHTML;
     document.getElementsByClassName("val_B")[0].innerHTML = v2;
     document.getElementsByClassName("val_B")[1].innerHTML = v1;
+    document.getElementById("ct").innerHTML = ++nb_tries;
     blink3(document.getElementsByClassName("val_B")[0]);
     blink4(document.getElementsByClassName("val_B")[1]);
 }
 
 function swap_ab()
 {
+    nb_tries--;
     swap_a();
     swap_b();
 }
@@ -128,6 +133,7 @@ function rotate_a()
     while (A_list[++len])
         A_list[len - 1].innerHTML = A_list[len].innerHTML;
     A_list[len - 1].innerHTML = tmp;
+    document.getElementById("ct").innerHTML = ++nb_tries;
     if (sort_check() == 0)
         blink(A_list[len - 1]);
 }
@@ -141,11 +147,13 @@ function rotate_b()
     while (B_list[++len])
         B_list[len - 1].innerHTML = B_list[len].innerHTML;
     B_list[len - 1].innerHTML = tmp;
+    document.getElementById("ct").innerHTML = ++nb_tries;
     blink2(B_list[len - 1]);
 }
 
 function rotate_ab()
 {
+    nb_tries--;
     rotate_a();
     rotate_b();
 }
@@ -161,6 +169,7 @@ function reverse_rotate_a()
     while (--len > 0)
         A_list[len].innerHTML = A_list[len - 1].innerHTML;
     A_list[len].innerHTML = tmp;
+    document.getElementById("ct").innerHTML = ++nb_tries;
     if (sort_check() == 0)
         blink(A_list[len]);
 }
@@ -176,11 +185,13 @@ function reverse_rotate_b()
     while (--len > 0)
         B_list[len].innerHTML = B_list[len - 1].innerHTML;
     B_list[len].innerHTML = tmp;
+    document.getElementById("ct").innerHTML = ++nb_tries;
     blink2(B_list[len]);
 }
 
 function reverse_rotate_ab()
 {
+    nb_tries--;
     reverse_rotate_a();
     reverse_rotate_b();
 }

@@ -1,7 +1,7 @@
 # PushSwapSimulator
 
 Ce projet vous permettra de vous familiariser avec l'algorythme de tri de Push Swap.
-Après avoir défini les paramètres, une liste de nombres sera générée, vous devrez alors utiliser les règles de tri du projet Push Swap à l'aide de boutons afin de trier la liste dans l'ordre croissant.
+Lancez le fichier index.html dans un navigateur. Après avoir défini les paramètres, une liste de nombres sera générée, vous devrez alors utiliser les règles de tri du projet Push Swap à l'aide de boutons afin de trier la liste dans l'ordre croissant.
 
 Voici les règles de tri telles qu'elles sont définies dans l'énoncé :
 

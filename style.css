@@ -47,15 +47,9 @@ ul
     width: 180px;
 }
 
-#nb
-{
-    left: 12%;
-}
-
-#nb2
-{
-    left: 30%;
-}
+#nb {left: 12%;}
+#nb2 {left: 30%;}
+#nb, #nb2 {overflow: auto;}
 
 ul li
 {
@@ -91,6 +85,7 @@ ul li
     text-align: center;
     font-size: 20px;
     z-index: 1;
+    overflow: auto;
 }
 
 #validate, #cancel
@@ -104,9 +99,17 @@ ul li
     display: none;
 }
 
-span, p
+span:not(#ct), p
 {
     color: red;
+}
+
+#counter
+{
+    position: absolute;
+    bottom: 0;
+    color: white;
+    font-weight: bold;
 }
 
 input:not(#c1, #c2)

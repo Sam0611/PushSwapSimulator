@@ -45,6 +45,8 @@
             <button class="sort" id="rrr" onclick="reverse_rotate_ab()">Both</button>
             
             <button id="open_settings" onclick="open_settings()">Paramètrage</button>
+
+            <div id="counter">Nombre de coups : <span id="ct"></span></div>
             
         </div>
         
@@ -75,7 +77,7 @@
         document.getElementById("settings").style.display = 'none';
     }
     
-    function check1() //verifie si la 1ere option est cochée
+    function check1() //verifie si la 1ere option est cochée (aleatoire)
     {
         if (document.getElementById("c1").checked == true)
         {
@@ -87,7 +89,7 @@
         }
     }
     
-    function check2() //verifie si la 2eme option est cochée
+    function check2() //verifie si la 2eme option est cochée (manuelle)
     {
         document.getElementsByTagName("span")[1].innerHTML = "";
         if (document.getElementById("c2").checked == true)
@@ -96,7 +98,7 @@
             document.getElementsByTagName("span")[2].innerHTML = "";
             nb_val = document.getElementsByTagName("input")[0].value;
             var nb = parseInt(nb_val);
-            if (nb >= 2 && nb <= 10)
+            if (nb >= 2 && nb <= 100)
             {
                 var count = 0;
                 while (count < nb)

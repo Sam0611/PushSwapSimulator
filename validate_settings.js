@@ -14,9 +14,9 @@ function validate()
     else //vérification de la valeur
     {
         nb_val = parseInt(nb_val);
-        if (nb_val < 2 || nb_val > 10)
+        if (nb_val < 2 || nb_val > 100)
         {
-            document.getElementsByTagName("span")[0].innerHTML = "La valeur doit être comprise entre 2 et 10";
+            document.getElementsByTagName("span")[0].innerHTML = "La valeur doit être comprise entre 2 et 100";
             errors++;
         }
         else
@@ -63,13 +63,16 @@ function validate()
             else
                 document.getElementsByTagName("p")[1].innerHTML = "";
 
-            if (max_val < min_val + 10)
+            if (errors == 0)
             {
-                document.getElementsByTagName("span")[2].innerHTML = "La valeur max doit être supérieure à la valeur min d'au moins 10";
-                errors++;
+                if (max_val - min_val <= nb_val)
+                {
+                    document.getElementsByTagName("span")[2].innerHTML = "La différence entre la valeur max et min doit être supérieure au nombre de valeurs";
+                    errors++;
+                }
+                else
+                    document.getElementsByTagName("span")[2].innerHTML = "";
             }
-            else
-                document.getElementsByTagName("span")[2].innerHTML = "";
         }
 
         // si pas d'erreur, le tableau est rempli par des valeurs aléatoires
@@ -155,6 +158,7 @@ function validate()
         }
         document.getElementsByTagName("span")[2].innerHTML = "";
         document.getElementById("settings").style.display = 'none';
+        document.getElementById("ct").innerHTML = 0;
         sort_check();
     }
 }
