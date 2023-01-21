@@ -14,9 +14,9 @@ function validate()
     else //vérification de la valeur
     {
         nb_val = parseInt(nb_val);
-        if (nb_val < 2 || nb_val > 100)
+        if (nb_val < 3 || nb_val > 100)
         {
-            document.getElementsByTagName("span")[0].innerHTML = "La valeur doit être comprise entre 2 et 100";
+            document.getElementsByTagName("span")[0].innerHTML = "La valeur doit être comprise entre 3 et 100";
             errors++;
         }
         else
